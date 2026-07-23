@@ -34,7 +34,6 @@ import {
 import { professorProfile, GovProject, CoopProject, ProjectExp, AcademicPaper } from "./data";
 import { InteractiveMap } from "./components/InteractiveMap";
 import { PaperTimeline } from "./components/PaperTimeline";
-import { AiAssistantModal } from "./components/AiAssistantModal";
 
 type TabId = "about" | "experience" | "expertise" | "projects_research" | "academic_exchange";
 type ProjectSubTab = "gov_coop" | "project_exp" | "academic";
@@ -71,7 +70,6 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileProjectsExpanded, setMobileProjectsExpanded] = useState(false);
   const [selectedPaper, setSelectedPaper] = useState<AcademicPaper | null>(null);
-  const [aiModalOpen, setAiModalOpen] = useState(false);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -1713,23 +1711,6 @@ export default function App() {
           </div>
         </footer>
       </main>
-
-      {/* Floating AI Assistant Button */}
-      <motion.button
-        onClick={() => setAiModalOpen(true)}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-[#85a6bf] to-[#2a6f97] text-white px-4 py-3 sm:px-5 sm:py-3.5 rounded-full shadow-lg border border-white/30 flex items-center gap-2.5 cursor-pointer group hover:shadow-xl transition-all"
-        aria-label="Open AI Assistant"
-      >
-        <Sparkles className="w-4 h-4 text-white animate-pulse" />
-        <span className="text-xs sm:text-sm font-bold font-sans tracking-wide">
-          郭教授 AI 助理
-        </span>
-      </motion.button>
-
-      {/* AI Assistant Modal */}
-      <AiAssistantModal isOpen={aiModalOpen} onClose={() => setAiModalOpen(false)} />
     </div>
   );
 }

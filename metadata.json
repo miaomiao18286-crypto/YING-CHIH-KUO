@@ -1,6 +1,6 @@
 {
   "name": "Remix: 郭盈芝助理教授個人學術網頁",
-  "description": "淡江大學教育科技學系郭盈芝助理教授的個人學術網頁，展示其專長領域、學術研究、經歷與產學合作亮點，並配備 AI 助理。",
+  "description": "淡江大學教育科技學系郭盈芝助理教授的個人學術網頁，展示其專長領域、學術研究、經歷與產學合作亮點。",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
