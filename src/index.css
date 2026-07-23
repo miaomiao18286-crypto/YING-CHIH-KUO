@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans TC", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif TC", "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Sophisticated Editorial Blue custom palette matching premium academic styles */
+  --color-plum: #0f1d3a;              /* Deep rich elegant midnight navy */
+  --color-clay: #2a6f97;              /* Elegant sophisticated editorial ocean-blue/slate */
+  --color-peach: #cbe2f4;             /* Fresh soft pastel sky blue tint */
+  --color-mustard: #4ba3c3;           /* Serene ocean-sky turquoise/teal for harmonious highlight */
+  --color-cream: #d2e2f0;             /* Beautiful soft pastel baby-blue accent */
+  --color-vanilla: #eef4f8;           /* Clear light ice-blue for clean premium cards */
+  --color-sand: #ffffff;              /* Clean white page background */
+  --color-chestnut: #2d3748;          /* Soft slate charcoal for readable text */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+  
+  body {
+    background-color: var(--color-sand); /* Soft pure white background */
+    background-image: 
+      radial-gradient(at 90% 15%, rgba(42, 111, 151, 0.04) 0px, transparent 50%),
+      radial-gradient(at 10% 85%, rgba(180, 210, 240, 0.12) 0px, transparent 50%);
+    color: var(--color-chestnut);        /* Soft slate charcoal text */
+    letter-spacing: 0.01em;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(15, 29, 58, 0.005) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 29, 58, 0.005) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* Custom micro-animations & layout helpers */
+.glass-panel {
+  background: rgba(238, 244, 248, 0.95); /* Light ice-blue inside frames */
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(42, 111, 151, 0.15); /* Subtle ocean/slate-blue border */
+  box-shadow: 0 12px 40px -12px rgba(15, 29, 58, 0.025);
+}
+
+.glass-panel-dark {
+  background: rgba(15, 29, 58, 0.96); /* Deep navy glass */
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(219, 232, 244, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(15, 29, 58, 0.18);
+}
+
+/* Custom scrollbar for beautiful UI */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbe2f4;
+  border-radius: 9999px;
+  border: 2px solid #ffffff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a6f97;
+}
